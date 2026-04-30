@@ -276,7 +276,7 @@ Microsoft's.
 
 * **Platform-agnostic approach**: By maintaining presence across multiple platforms (X/Twitter, Mastodon, LinkedIn), PHP avoids dependence on any single platform and reaches developers wherever they prefer to be.
 
-* **Precedent**: Major open-source projects and organisations (Ubuntu, Python, [Node.js](http://Node.js), Apache Foundation, Linux Foundation), standards bodies (IETF), maintain X/Twitter accounts.
+* **Precedent**: Major open-source projects and organisations (TypeScript, Golang, OpenJS Foundation, Python Software Foundation, Apache Foundation, Linux Foundation) maintain X/Twitter accounts.
 
 That said, this RFC does not require PHP to maintain an X presence.
 It establishes a process. If the PHP Foundation, operating under the
