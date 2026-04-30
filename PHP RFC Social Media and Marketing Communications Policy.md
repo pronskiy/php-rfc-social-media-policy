@@ -51,6 +51,12 @@ For April 2026, the data looks as follows:
 | Bluesky        |     14 |  0.09% |
 | Threads        |     12 |  0.08% |
 
+Among platforms in scope of this policy, X/Twitter accounts
+for 13.17% of social referral traffic, more than LinkedIn (4.23%)
+and Mastodon (0.23%) combined. This traffic is generated despite
+the X account being dormant since June 2024. An active automated
+account would expand reach.
+
 ### Why This Matters
 
 1. **Perception shapes reality**: When developers research PHP, a dormant official Twitter account with the last activity from almost two years ago reinforces the "PHP is dead" narrative, regardless of the language's actual vitality and continued development.  
