@@ -1,11 +1,12 @@
+<!DOCTYPE markdown>
 # PHP RFC: Social Media and Marketing Communications Policy
 
-* Version: 1.4
-* Date: 2026-05-18
+* Version: 1.6
+* Date: 2026-06-11
 * Author: Roman Pronskiy (roman@pronskiy.com)
-* Status: Draft
+* Status: Under Discussion
 * First Published at: https://wiki.php.net/rfc/social-media-policy
-* Companion Policy PR: https://github.com/php/policies (branch `social-media`)
+* Policy PR: https://github.com/php/policies/pull/32
 
 ## Introduction
 
@@ -16,7 +17,7 @@ defined process for adding, retiring, or recovering accounts.
 
 This RFC proposes adopting a formal Social Media and Marketing Communications
 Policy. **The policy text is provided as a companion pull request to the
-[`php/policies`](https://github.com/php/policies) repository.** Approving this
+[php/policies](https://github.com/php/policies) repository.** Approving this
 RFC adopts that policy document.
 
 ## Problem Statement
@@ -56,7 +57,7 @@ unilateral choices by individual credential holders.
 
 This RFC proposes adopting a formal Social Media and Marketing Communications
 Policy for the PHP project. The policy text is provided as a companion pull
-request to the [`php/policies`](https://github.com/php/policies) repository.
+request to the [php/policies](https://github.com/php/policies) repository.
 
 The policy establishes:
 
@@ -64,32 +65,46 @@ The policy establishes:
   changes by pull request. Text-based platforms (Twitter/X, Mastodon,
   LinkedIn, and similar) are in scope; video platforms are explicitly out of
   scope.
-* **Principles.** Reach, automation, neutrality, shared stewardship, and
-  transparency.
+* **Principles.** Reach, discretion, no silent abandonment, automation,
+  neutrality, shared stewardship, and transparency. Discretion means presence
+  on any given platform is never obligatory: the project decides where to be,
+  through a deliberate, documented, announced process. The
+  no-silent-abandonment principle requires posting to continue on every
+  listed platform; the only way to stop is the documented retirement
+  procedure.
 * **Account custody — PHP Infrastructure Team.** Credentials for all official
-  PHP social media accounts are held by the Infrastructure Team, with a
-  minimum of three (3) holders per account, secure storage, documented
-  succession, and responsibility for automation and technical operations.
+  PHP social media accounts are held by the Infrastructure Team — defined by
+  reference as the existing group coordinating via `systems@php.net` and the
+  [php/infrastructure](https://github.com/php/infrastructure) repository —
+  with a minimum of three (3) holders per account, a public list of credential
+  holders, secure storage, documented succession, and responsibility for
+  automation and technical operations.
 * **Content authority — PHP Social Media Team.** A new, open-volunteer team
   drawn from the PHP community decides what is posted, when, and in what
   tone. Membership is self-organized; the roster is public and maintained
-  in the policy file via pull request.
+  in the policy file via pull request. Roster additions are announced on the
+  internals mailing list with a comment window, and the community retains an
+  RFC-level backstop to remove a member or reconstitute the team.
 * **Optional delegation to the PHP Foundation.** The Social Media Team MAY
   delegate marketing initiatives or curated content to the PHP Foundation,
   with delegation recorded publicly and revocable at any time. Delegation
   does not transfer credential custody.
-* **Content categories.** Automated content (releases, security advisories,
-  RFC voting results, PHP.net news entries) requiring no per-post approval;
-  curated content requiring Social Media Team approval; marketing
-  initiatives; and prohibited content.
+* **Prohibited content.** Project-level limits on what official accounts may
+  ever post: no political statements unrelated to PHP, no commercial
+  endorsements unrelated to PHP, no personal opinions presented as the
+  project's official position, no interpersonal disputes.
+* **Team operational autonomy.** The Social Media Team develops and maintains
+  its own operational policies — content categories and approval workflow,
+  procedures for adding and retiring official accounts, member onboarding —
+  in a companion document in `php/policies`, amendable by pull request
+  through an open and transparent process, without requiring an RFC. These
+  operational policies must not conflict with the policy itself.
 * **Account transition.** A defined procedure for inventory, credential
   transfer, and recovery upon adoption.
-* **Adding and removing official accounts.** A defined, ongoing procedure
-  for creating, retiring, or recognizing accounts after adoption.
 
 Operational details are defined in the policy document itself, in keeping
 with the PHP project's practice of locating process definitions in
-[`php/policies`](https://github.com/php/policies).
+[php/policies](https://github.com/php/policies).
 
 ### Why This Division of Responsibilities
 
@@ -158,8 +173,20 @@ criticize past volunteers.
 
 The PHP Infrastructure Team. A minimum of three (3) Infrastructure Team
 members hold credentials for each official account, with documented
-succession and emergency-access procedures. Social Media Team members do
-not hold credentials by virtue of that role.
+succession and emergency-access procedures. The credential holders for each
+account are publicly listed. Social Media Team members do not hold
+credentials by virtue of that role.
+
+### Who exactly is the Infrastructure Team?
+
+The policy defines it by reference: the existing group of volunteers who
+maintain the PHP project's infrastructure, coordinated through the
+`systems@php.net` mailing list and the
+[php/infrastructure](https://github.com/php/infrastructure) repository.
+The Infrastructure Team predates this RFC and its membership is not governed
+here; formalizing infrastructure governance more broadly is out of scope.
+What this policy does require is transparency where it touches social media:
+a public list of the credential holders for each official account.
 
 ### Who is on the Social Media Team initially?
 
@@ -173,7 +200,19 @@ A prospective member proposes themselves to the existing team. The team
 agrees on its own internal process for accepting or declining new members.
 Members should have a demonstrated connection to the PHP community —
 contributions to php-src, the documentation, the infrastructure, a PHP user
-group, or comparable involvement.
+group, or comparable involvement. Additions to the roster are announced on
+the internals mailing list, and the roster pull request stays open for at
+least a week so the community can comment before it is merged.
+
+### How can a Social Media Team member be removed?
+
+Three mechanisms, in increasing order of weight. The team can remove a
+member through its own internal process. Prospective members can be
+objected to during the announcement and comment window before they join.
+And as a backstop, the community can remove a member — or reconstitute the
+team entirely — through the project's RFC process. The team is
+self-organizing for day-to-day matters, but it is accountable to the
+project as a whole.
 
 ### What is the PHP Foundation's role under this policy?
 
@@ -198,18 +237,39 @@ SHOULD be raised on the internals mailing list.
 
 ### How are accounts added or removed?
 
-The policy defines an "Adding and Removing Official Accounts" procedure.
-Routine additions and retirements are decided by the Social Media Team
-(custody is established by the Infrastructure Team) and recorded via pull
-request to the policy file. Retirements of accounts with established public
-reach SHOULD be announced on the internals mailing list before acting; the
-community MAY request an RFC if it considers a retirement a project-level
-decision.
+The authoritative list of official accounts lives in the policy's Scope
+section and is updated by pull request. The procedure for adding, retiring,
+or recognizing accounts is defined in the Social Media Team's own operational
+policies document, not in the RFC-governed policy — the team can refine the
+procedure without an RFC. The community MAY request an RFC if it considers a
+particular retirement a project-level decision.
 
 ### Can this arrangement be changed?
 
 Yes. The policy may be amended by a future RFC with 2/3 majority approval.
-Updates to the team roster and routine Scope changes do not require an RFC.
+Updates to the team roster, routine Scope-list changes, and the team's
+operational policies document do not require an RFC.
+
+### How does the policy reconcile neutrality with platform choice?
+
+The policy separates the two layers. **Content is neutral**: official
+communications focus on PHP and take no positions on platform politics or
+non-PHP commercial matters. **Platform presence is discretionary**: nothing
+in the policy obliges the project to establish or maintain a presence on any
+particular platform. The project decides where it wants to be, and the
+Social Media Team may decline a platform it considers a poor fit for an
+official PHP presence — the "reach" principle is a goal, not an obligation.
+
+That discretion is deliberately constrained by process, because the project
+has already experienced the failure mode unstructured discretion invites:
+the Twitter/X account went dormant through an individual's unilateral,
+undocumented decision. Under this policy that cannot recur in either
+direction. Adding or retiring an account must follow the documented
+procedures, a retirement must be announced on the internals mailing list
+before taking effect, and the community can escalate a contested decision to
+an RFC. Conversely, the no-silent-abandonment principle requires posting (at
+minimum automated content) to continue on every platform listed in Scope —
+quietly ceasing activity on a listed platform is itself a policy violation.
 
 ### Can individuals still post about PHP on their personal accounts?
 
@@ -223,7 +283,7 @@ A single yes-or-no vote on the policy as a whole, requiring 2/3 majority.
 
 ## References
 
-* Companion policy PR: https://github.com/php/policies (branch `social-media`)
+* Companion policy PR: https://github.com/php/policies/pull/32
 * [PHP Policies Repository](https://github.com/php/policies)
 * [The PHP Foundation](https://thephp.foundation/)
 
@@ -231,7 +291,7 @@ A single yes-or-no vote on the policy as a whole, requiring 2/3 majority.
 
 * 2026-04-30: Initial draft.
 * 2026-05-18 (v1.1): Policy substance moved to a companion PR in
-  [`php/policies`](https://github.com/php/policies) per project convention.
+  [php/policies](https://github.com/php/policies) per project convention.
   Removed embedded policy appendix, the "pending link removal" subsection,
   and the "if this RFC does not pass" subsection.
 * 2026-05-18 (v1.2): Briefly considered combining custody and content into a
@@ -245,3 +305,22 @@ A single yes-or-no vote on the policy as a whole, requiring 2/3 majority.
   Ownership" advocacy sections. Condensed the Problem Statement to the
   governance gap, retaining a single illustrative reference to the
   Twitter/X account's custody and dormancy as a concrete example.
+* 2026-06-11 (v1.5): Per review feedback, moved operational detail out of
+  the RFC-governed policy into a team-maintained operations document
+  (`social-media/team-operations.rst`) amendable by pull request without an
+  RFC: content categories (automated, curated, marketing) and the procedure
+  for adding and removing official accounts. The policy retains only
+  project-level constraints, including prohibited content.
+* 2026-06-11 (v1.6): Per further review feedback: (1) added a discretion
+  principle — presence on any given platform is never obligatory, and adding
+  or retiring an account requires a deliberate, documented, announced
+  process; (2) added a
+  no-silent-abandonment principle — posting continues on every listed
+  platform, and the only way to stop is the documented retirement procedure;
+  (3) added a note that content rules require contextual judgment, resting
+  with the Social Media Team; (4) added Social Media Team accountability —
+  roster additions announced on internals with a comment window, plus an
+  RFC-level backstop to remove a member or reconstitute the team; (5) defined
+  the Infrastructure Team by reference (`systems@php.net`,
+  `php/infrastructure`) and required a public list of credential holders per
+  account.
